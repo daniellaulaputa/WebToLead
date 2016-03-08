@@ -1,0 +1,608 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0051)http://www.kerrylogistics.com/eng/main/contacts.jsp -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Kerry Logistics</title>
+<link href="./Kerry Logistics_files/common.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./Kerry Logistics_files/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="./Kerry Logistics_files/jquery.selectbox-0.2.min.js"></script>
+
+<script type="text/javascript">
+$(function () {
+	$("#contactselect01,#contactselect02,#contactselect03,#contactselect04,#contactselect05,#contactselect06,#contactselect07").selectbox();
+});
+</script>
+<script type="text/javascript" src="./Kerry Logistics_files/common.js"></script><meta http-equiv="X-UA-Compatible" content="IE=Edge"><script type="text/javascript" src="./Kerry Logistics_files/jquery.mousewheel-3.0.4.pack.js"></script><script type="text/javascript" src="./Kerry Logistics_files/jquery.fancybox-1.3.4.pack.js"></script>
+<link href="./Kerry Logistics_files/press.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+$(document).ready(function(){
+	highlight(3, '3_1');
+});
+	
+function form1show(){
+	$(".contactuslink1,.contactuslink4,.contactusform2").hide();
+	$(".contactuslink2,.contactuslink3,.contactusform1,.formbottom,.captchaForm").show();
+	$("#formShow").val('form1');
+};
+function form1hide(){
+	$(".contactuslink2,.contactuslink4,.contactusform1,.contactusform2,.formbottom,.captchaForm").hide();
+	$(".contactuslink1,.contactuslink3").show();
+	$("#formShow").val('');
+};
+function form2show(){
+	$(".contactuslink3,.contactuslink2,.contactusform1").hide();
+	$(".contactuslink4,.contactusform2,.contactuslink1,.formbottom,.captchaForm").show();
+	$("#formShow").val('form2');
+};
+function form2hide(){
+	$(".contactuslink4,.contactuslink2,.contactusform1,.contactusform2,.formbottom,.captchaForm").hide();
+	$(".contactuslink3,.contactuslink1").show();
+	$("#formShow").val('');
+};
+</script>
+
+<script type="text/javascript" src="./Kerry Logistics_files/jquery-hcheckbox.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.checkboxs').hcheckbox();
+});
+
+$(function()
+{
+  $('.contactselect03_input').hide();
+  $('#contactselect03').change(function(){
+	 //set the select value
+	 var val = $(this).val();
+	 if(val != "Other") {
+	 $('.contactselect03_input').hide();
+	 } else {
+	 $('.contactselect03_input').show();
+	 }
+  })
+});
+
+$(function()
+{
+  $('.contactselect07_input').hide();
+  $('#contactselect07').change(function(){
+	 //set the select value
+	 var val = $(this).val();
+	 if(val != "Other2") {
+	 $('.contactselect07_input').hide();
+	 } else {
+	 $('.contactselect07_input').show();
+	 }
+  })
+});
+
+function hideshowinput(){
+	var classTemp = $("#check_other_2").attr("class");
+	if(classTemp.indexOf("checked") != -1){
+		$('#checkbox_other_2').hide();
+	}else{
+		$('#checkbox_other_2').show();
+	};
+}
+function check_1(){
+	var classTemp = $("#check_1").attr("class");
+	if(classTemp.indexOf("checked") != -1){
+		$('.checkbox_1').hide();
+	}else{
+		$('.checkbox_1').show();
+	};
+}
+function check_2(){
+	var classTemp = $("#check_2").attr("class");
+	if(classTemp.indexOf("checked") != -1){
+		$('.checkbox_2').hide();
+	}else{
+		$('.checkbox_2').show();
+	};
+}
+
+function formcreate(){
+	if($(".contactusform1").css('display')=='none'){
+		form2create();
+	}else {
+		form1create();
+	}
+}
+
+function formsubmit(){
+	if($(".contactusform1").css('display')=='none'){
+		form2submit();
+	}else {
+		form1submit();
+	}
+}
+
+function form1create()
+{
+	var frm1 = document.forms["businessForm"];
+	frm1.contactselect01.value = "1";
+	frm1.fullname2.value = "";
+	frm1.fullname3.value = "";
+	frm1.company.value = "";
+	frm1.position.value = "";
+	frm1.contactselect02.value = 1;
+	frm1.phoneNo1.value = "";
+	frm1.phoneNo2.value = "";
+	frm1.email.value = "";
+	frm1.yourEnquiry.value="";
+}
+function form1submit()
+{
+	var frm1 = document.forms["businessForm"];
+	var fullname = frm1.contactselect01.value;
+	var fullname2 = frm1.fullname2.value;
+	var fullname3 = frm1.fullname3.value;
+	var company = frm1.company.value;
+	var position = frm1.position.value;
+	var contactselect02 = frm1.contactselect02.value;
+	var phoneNo1 = frm1.phoneNo1.value;
+	var phoneNo2 = frm1.phoneNo2.value;
+	var email = frm1.email.value;
+	var yourEnquiry = frm1.yourEnquiry.value;
+	
+	var sa = "";
+	
+	var input = frm1.interestedServices1;
+    for(var i = 0; i < input.length; i ++)
+      {
+               if(input[i].type == "checkbox")
+                {
+                  if (input[i].checked)
+                  {
+                     sa+=input[i].value+" | ";
+                     
+                  }
+                }
+      }
+      
+      frm1.check1name.value= sa;
+      
+      var ssa2 = "";
+     var input2 = frm1.interestedServices2;
+    for(var i = 0; i < input2.length; i ++)
+      {
+               if(input2[i].type == "checkbox")
+                {
+                  if (input2[i].checked)
+                  {
+                     ssa2+=input2[i].value+" | ";
+                     
+                  }
+                }
+      }
+      
+      frm1.check2name.value= ssa2;
+	
+	
+	var message = "";
+	
+	if(fullname == 1)
+	{
+		message = "Please fill in all the *mandatory items.";
+	}else if(fullname3 == "" || fullname2==""  || fullname3 == "First Name" || fullname2=="Surname")
+	{
+		message = "Please fill in all the *mandatory items.";
+	}else if(company == "")
+	{
+		message = "Please fill in all the *mandatory items.";
+	}else if(position == "")
+	{
+		message = "Please fill in all the *mandatory items.";
+	}else if(contactselect02 == 1)
+	{
+		message = "Please fill in all the *mandatory items.";
+	}else if(phoneNo1 =="" && phoneNo2=="")
+	{
+		message = "Please fill in all the *mandatory items.";
+	}else if(email == "")
+	{
+		message = "Please fill in all the *mandatory items.";
+	}else if(yourEnquiry == "")
+	{
+		message = "Please fill in all the *mandatory items.";
+	}
+	 var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+           if(!myreg.test(email))
+           {
+              message ="Please fill in all the *mandatory items.";
+           }
+	
+	if(message != "")
+	{
+		alert(message);
+	}else
+	{
+		//frm1.submit();
+		recapValidate(frm1);
+	}
+}
+
+function form2create()
+{
+	var frm1 = document.forms["Generalform2"];
+	frm1.contactselect05.value = 1;
+	frm1.fullName2G.value = "";
+	frm1.fullName3G.value = "";
+	frm1.CompanyG.value = "";
+	frm1.positionG.value = "";
+	frm1.phoneNoG1.value = "";
+	frm1.phoneNoG2.value = "";
+	frm1.contactselect06.value = 1;
+	frm1.emailG.value = "";
+	frm1.yourEnquiryG.value = "";
+}
+function form2submit()
+{
+	var frm1 = document.forms["Generalform2"];
+	var contactselect05 = frm1.contactselect05.value;
+	var fullName2G = frm1.fullName2G.value;
+	var fullName3G = frm1.fullName3G.value;
+	var CompanyG =  frm1.CompanyG.value;
+	var positionG =  frm1.positionG.value;
+	var phoneNoG1 =  frm1.phoneNoG1.value;
+	var phoneNoG2 =  frm1.phoneNoG2.value;
+	var contactselect06 = frm1.contactselect06.value;
+	var emailG = frm1.emailG.value;
+	var yourEnquiryG = frm1.yourEnquiryG.value;
+	var message = "";	
+	if(contactselect05 == 1)
+	{
+		message = "Please fill in all the *mandatory items.";
+	}else if (fullName2G == "" || fullName3G == "" || fullName3G == "First Name" || fullName2G=="Surname")
+	{
+		message = "Please fill in all the *mandatory items.";
+	}else if(CompanyG == "")
+	{
+		message = "Please fill in all the *mandatory items.";
+	}else if(positionG == "")
+	{
+		message = "Please fill in all the *mandatory items.";
+	}else if(contactselect06 == "")
+	{
+		message = "Please fill in all the *mandatory items.";
+	}else if(phoneNoG1 == "" || phoneNoG2=="")
+	{
+		message = "Please fill in all the *mandatory items.";
+	}else if(emailG == "")
+	{
+		message = "Please fill in all the *mandatory items.";
+	}else if(yourEnquiryG == "")
+	{
+		message = "Please fill in all the *mandatory items.";
+	}
+	
+	var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+    if(!myreg.test(emailG))
+    {
+        message ="Please fill in all the *mandatory items.";
+    }
+	if(message != "")
+	{
+		alert(message);
+	}else
+	{
+		//frm1.submit();
+		recapValidate(frm1);
+	}
+}
+</script>
+		<script type="text/javascript">
+									  	   function getSch(nihao){
+											var v1=nihao;
+											$.post("/eng/main/ajax.jsp",{str:v1},function(result){
+													
+													var strs= new Array();
+													strs=result.split("::is::"); 
+													document.getElementById("phoneNo1").value =strs[0];
+													document.getElementById("fromemial").value =strs[1];
+									  		});		
+									  	}	
+									  	
+									  	function getSch2(nihao){
+											var v1=nihao;
+											$.post("/eng/main/ajax.jsp",{str:v1},function(result){
+													var strs= new Array(); 
+													strs=result.split("::is::"); 
+													document.getElementById("phoneNoG1").value = strs[0];
+													document.getElementById("from2emial").value = strs[1];
+									  		});		
+									  	}				
+</script>
+
+<link href="./Kerry Logistics_files/jquery.selectbox.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" charset="UTF-8" src="./Kerry Logistics_files/BsHQ21k8_3mGmwLCkcTGvdtz9h1m7KKXm-HdFefWibU.js"></script><style type="text/css">.recaptchatable td img{display:block}.recaptchatable .recaptcha_r1_c1{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') 0 -63px no-repeat;width:318px;height:9px}.recaptchatable .recaptcha_r2_c1{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -18px 0 no-repeat;width:9px;height:57px}.recaptchatable .recaptcha_r2_c2{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -27px 0 no-repeat;width:9px;height:57px}.recaptchatable .recaptcha_r3_c1{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') 0 0 no-repeat;width:9px;height:63px}.recaptchatable .recaptcha_r3_c2{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -18px -57px no-repeat;width:300px;height:6px}.recaptchatable .recaptcha_r3_c3{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -9px 0 no-repeat;width:9px;height:63px}.recaptchatable .recaptcha_r4_c1{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -43px 0 no-repeat;width:171px;height:49px}.recaptchatable .recaptcha_r4_c2{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -36px 0 no-repeat;width:7px;height:57px}.recaptchatable .recaptcha_r4_c4{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -214px 0 no-repeat;width:97px;height:57px}.recaptchatable .recaptcha_r7_c1{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -43px -49px no-repeat;width:171px;height:8px}.recaptchatable .recaptcha_r8_c1{background:url('http://www.google.com/recaptcha/api/img/red/sprite.png') -43px -49px no-repeat;width:25px;height:8px}.recaptchatable .recaptcha_image_cell center img{height:57px}.recaptchatable .recaptcha_image_cell center{height:57px}.recaptchatable .recaptcha_image_cell{background-color:white;height:57px}#recaptcha_area,#recaptcha_table{width:318px!important}.recaptchatable,#recaptcha_area tr,#recaptcha_area td,#recaptcha_area th{margin:0!important;border:0!important;padding:0!important;border-collapse:collapse!important;vertical-align:middle!important}.recaptchatable *{margin:0;padding:0;border:0;font-family:helvetica,sans-serif;font-size:8pt;color:black;position:static;top:auto;left:auto;right:auto;bottom:auto}.recaptchatable #recaptcha_image{position:relative;margin:auto}.recaptchatable #recaptcha_image #recaptcha_challenge_image{display:block}.recaptchatable #recaptcha_image #recaptcha_ad_image{display:block;position:absolute;top:0}.recaptchatable img{border:0!important;margin:0!important;padding:0!important}.recaptchatable a,.recaptchatable a:hover{cursor:pointer;outline:none;border:0!important;padding:0!important;text-decoration:none;color:blue;background:none!important;font-weight:normal}.recaptcha_input_area{position:relative!important;width:153px!important;height:45px!important;margin-left:7px!important;margin-right:7px!important;background:none!important}.recaptchatable label.recaptcha_input_area_text{margin:0!important;padding:0!important;position:static!important;top:auto!important;left:auto!important;right:auto!important;bottom:auto!important;background:none!important;height:auto!important;width:auto!important}.recaptcha_theme_red label.recaptcha_input_area_text,.recaptcha_theme_white label.recaptcha_input_area_text{color:black!important}.recaptcha_theme_blackglass label.recaptcha_input_area_text{color:white!important}.recaptchatable #recaptcha_response_field{width:153px!important;position:relative!important;bottom:7px!important;padding:0!important;margin:15px 0 0 0!important;font-size:10pt}.recaptcha_theme_blackglass #recaptcha_response_field,.recaptcha_theme_white #recaptcha_response_field{border:1px solid gray}.recaptcha_theme_red #recaptcha_response_field{border:1px solid #cca940}.recaptcha_audio_cant_hear_link{font-size:7pt;color:black}.recaptchatable{line-height:1!important}#recaptcha_instructions_error{color:red!important}.recaptcha_only_if_privacy{float:right;text-align:right}#recaptcha-ad-choices{position:absolute;height:15px;top:0;right:0}#recaptcha-ad-choices img{height:15px}.recaptcha-ad-choices-collapsed{width:30px;height:15px;display:block}.recaptcha-ad-choices-expanded{width:75px;height:15px;display:none}#recaptcha-ad-choices:hover .recaptcha-ad-choices-collapsed{display:none}#recaptcha-ad-choices:hover .recaptcha-ad-choices-expanded{display:block}
+
+.recaptcha_is_showing_audio .recaptcha_only_if_image,.recaptcha_isnot_showing_audio .recaptcha_only_if_audio,.recaptcha_had_incorrect_sol .recaptcha_only_if_no_incorrect_sol,.recaptcha_nothad_incorrect_sol .recaptcha_only_if_incorrect_sol{display:none !important}</style><script type="text/javascript" src="./Kerry Logistics_files/reload"></script><style data-c2c="c2c_print_container_style" media="print" type="text/css">span.skype_c2c_print_container {} span.skype_c2c_container {display:none !important;} .skype_c2c_menu_container {display:none !important;}</style><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/telemetry.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/menu_handler.js"></script></head>
+<body>
+<div id="wrap">
+	<div id="header"><a id="logo" href="http://www.kerrylogistics.com/eng/main/index.jsp" title="Kerry Logistics">Kerry Logistics</a><p id="slogen">ASIA SPECIALIST • CHINA FOCUS • GLOBAL NETWORK</p><ul class="topnav"><li><a href="http://www.kerrylogistics.com/eng/OUR_COMPANY/Press/press.jsp" title="">PRESS</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_COMPANY/Careers/careers.jsp" title="">CAREERS</a></li><li><a href="http://www.kerrylogistics.com/eng/main/contacts.jsp" title="" class="topnavlasta">CONTACTS</a></li></ul><ul class="topnav lang"><li><a href="javascript:switchlangtch();" title="">繁</a></li><li><a href="javascript:switchlangsch();" title="" class="topnavlasta">简</a></li></ul><div id="mainmenu"><div id="nav"><dl class="one"> <dt><a href="http://www.kerrylogistics.com/eng/OUR_COMPANY/About_Us/About%20Us.jsp" class="">OUR COMPANY</a></dt><dd class="menudd" style="width: 459px; display: none;"><ul class="fixed"><li><a href="http://www.kerrylogistics.com/eng/OUR_COMPANY/About_Us/About%20Us.jsp"><strong>About Us</strong></a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_COMPANY/About_Us/philosophy/philosophy.jsp">Philosophy</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_COMPANY/About_Us/fastfact/fastfact.jsp">Fast Facts</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_COMPANY/About_Us/awards/awards.jsp">Awards</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_COMPANY/About_Us/qualityaccreditaions/qualityaccreditaions.jsp">Quality Accreditations</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_COMPANY/About_Us/responsibility/responsibility.jsp">Responsibility</a></li></ul><ul class="fixed"><li><a href="http://www.kerrylogistics.com/eng/OUR_COMPANY/Careers/careers.jsp"><strong>Career</strong></a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_COMPANY/Careers/workingatkl/workingatkl.jsp">Working at Kerry Logistics</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_COMPANY/Careers/managmenttrainee/index.jsp">Management Trainee</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_COMPANY/Careers/JobOpportunity/JobList.jsp">Job Opportunity</a></li></ul><ul class="fixed"><li><a href="http://www.kerrylogistics.com/eng/OUR_COMPANY/Press/press.jsp"><strong>Press</strong></a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_COMPANY/Press/pressrelease/indexlist.jsp">Press Release</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_COMPANY/Press/publications/publications.jsp">Publications</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_COMPANY/Press/imagegallery/imagegallery.jsp">Image Gallery</a></li></ul></dd></dl><dl class="one"> <dt><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/ourexpertise.jsp">OUR EXPERTISE</a></dt><dd class="menudd" style="left: -144px; width: 918px;"><ul class="fixed"><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/IntegratedLogistics/integratedlogistics.jsp"><strong>Integrated Logistics</strong></a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/IntegratedLogistics/WarehousingDistribution/warehousingdistribution.jsp">Warehousing &amp; Distribution</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/IntegratedLogistics/roadfreight/roadfreight.jsp">Road Freight</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/IntegratedLogistics/terminallogistics/terminallogistics.jsp">Terminal Logistics</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/IntegratedLogistics/busioutsource/busioutsource.jsp">Business Outsourcing Solutions</a></li></ul><ul class="fixed"><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/InternationalFreightForward/iff.jsp"><strong>International Freight Forwarding</strong></a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/InternationalFreightForward/airfreight/airfreight.jsp">Air Freight</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/InternationalFreightForward/oceanfreight/oceanfreight.jsp">Ocean Freight</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/InternationalFreightForward/roadrailfreight/roadnrailfreight.jsp">Road Freight</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/InternationalFreightForward/customsbrokerage/customsbrokerage.jsp">Customs Brokerage</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/InternationalFreightForward/insurancebrokerage/insurancebrokerage.jsp">Insurance Brokerage</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/InternationalFreightForward/globalsecurityproduct/globalsecurityproduct.jsp">Global Security Product</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/InternationalFreightForward/riskmanagement/riskmanagement.jsp">Risk Management Consultancy</a></li></ul><ul class="fixed"><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/Express/express.jsp"><strong>Express</strong></a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/Express/InternationalExpress/internationalexpress.jsp">International Express</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/Express/DomesticExpress/domasticexpress.jsp">Domestic Express</a></li><li><a href="http://www.kerrylogistics.com/eng/main/contacts.jsp#"></a></li></ul><ul class="fixed"><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/SupplyChainSolutions/supplychainsolutions.jsp"><strong>Supply Chain Solutions</strong></a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/SupplyChainSolutions/regionaldistribcentre/regionaldistribcentre.jsp">Regional Distribution Centre</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/SupplyChainSolutions/povendormanage/povendormanage.jsp">PO/Vendor Management</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/SupplyChainSolutions/returnmatauthorisation/returnmatauthorisation.jsp">Return Material Authorisation</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/SupplyChainSolutions/eventmanage/eventmanage.jsp">Events Management</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/SupplyChainSolutions/virtualbuyingoffice/virtualbuyingoffice.jsp">Virtual Buying Office</a></li></ul><ul class="fixed"><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/IndustrySolutions/industrysolutions.jsp"><strong>Industry Solutions</strong></a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/IndustrySolutions/fashionlifestyle/fashionlifestyle.jsp">Fashion &amp; Lifestyle</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/IndustrySolutions/electronicstechnology/electronicstechnology.jsp">Electronics &amp; Technology</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/IndustrySolutions/foodbeverage/foodbeverage.jsp">Food &amp; Beverage</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/IndustrySolutions/fmcg/fmcg.jsp">FMCG</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/IndustrySolutions/industrialmatsci/industrialmatsci.jsp">Industrial &amp; Material Science</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/IndustrySolutions/automotive/automotive.jsp">Automotive</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/IndustrySolutions/pharmaceuhealth/pharmaceuhealth.jsp">Pharmaceutical &amp; Healthcare	</a></li></ul><ul class="fixed"><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/FoodFMCGTrading/fbtrading.jsp"><strong>F&amp;B Trading</strong></a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/FoodFMCGTrading/fmcgtradingdistribution/fmcgtradingdistribution.jsp">FMCG Trading &amp; Distribution</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/FoodFMCGTrading/foodservicing/foodservicing.jsp">Food Servicing</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/FoodFMCGTrading/foodcatering/foodcatering.jsp">Food Catering</a></li></ul><div class="clear"></div><ul class="fixed"><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/ISOTankSolutions/isotanksolutions.jsp"><strong>ISO Tank Solutions</strong></a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/ISOTankSolutions/cleaningrepair/cleaningrepair.jsp">Cleaning &amp; Repair</a></li><li><a href="http://www.kerrylogistics.com/eng/OUR_EXPERTISE/ISOTankSolutions/tradingsparepartssupply/tradingsparepartssupply.jsp">OEM Castings &amp; Tank Trading</a></li></ul></dd></dl><dl class="one"> <dt><a href="http://www.kerrylogistics.com/eng/OUR_NETWORK/index.jsp">OUR NETWORK</a></dt></dl><dl class="one threeone"> <dt><a href="http://www.kerrylogistics.com/eng/INVESTOR/company/companyoverview.jsp">INVESTOR RELATIONS</a></dt><dd class="menudd" style="width:780px;left:-200px;"><div class="clear"></div><div class="div1"><ul class="fixed"><li><a href="http://www.kerrylogistics.com/eng/INVESTOR/company/companyoverview.jsp"><strong>Company Overview</strong></a></li></ul><ul class="fixed"><li><a href="http://www.kerrylogistics.com/eng/INVESTOR/financialhighlights/financial.jsp"><strong>Financial Highlights</strong></a></li></ul><ul class="fixed"><li><a href="http://www.kerrylogistics.com/eng/INVESTOR/reports/annualreports.jsp"><strong>Annual / Interim Reports</strong></a></li></ul><ul class="fixed"><li><a href="http://www.kerrylogistics.com/eng/INVESTOR/IRNewsletter/IRNewsletter.jsp"><strong>IR Newsletter</strong></a></li></ul></div><div class="div2"><ul class="fixed"><li><a href="http://www.kerrylogistics.com/eng/main/contacts.jsp#"><strong>Share Registrar Notices</strong></a></li><li><a href="http://www.tricor.com.hk/eNotice/lostcert_00636_en.asp">Replacement of Lost Share Certificates</a></li></ul><ul class="fixed"><li><a href="http://www.kerrylogistics.com/eng/INVESTOR/stockexchange/announcements/announcements.jsp"><strong>Stock Exchange Filings</strong></a></li><li><a href="http://www.kerrylogistics.com/eng/INVESTOR/stockexchange/announcements/announcements.jsp">Announcements</a></li><li><a href="http://www.kerrylogistics.com/eng/INVESTOR/stockexchange/circular/circulars.jsp">Circulars</a></li><li><a href="http://www.kerrylogistics.com/eng/INVESTOR/stockexchange/return/MonthlyNextDayReturn.jsp">Monthly / Next Day Return</a></li><li><a href="http://www.kerrylogistics.com/eng/INVESTOR/stockexchange/others/others.jsp">Others</a></li></ul></div><div class="div3"><ul class="fixed"><li><a href="http://www.kerrylogistics.com/eng/INVESTOR/stockinfo/StockInformation.jsp"><strong>Stock Information</strong></a></li></ul><ul class="fixed"><li><a href="http://www.kerrylogistics.com/eng/INVESTOR/corporate/board/boardofdirectors.jsp"><strong>Corporate Governance</strong></a></li><li><a href="http://www.kerrylogistics.com/eng/INVESTOR/corporate/board/boardofdirectors.jsp">Board of Directors</a></li><li><a href="http://www.kerrylogistics.com/eng/INVESTOR/corporate/committees/Committees.jsp">Committees</a></li><li><a href="http://www.kerrylogistics.com/eng/INVESTOR/corporate/shareholders/policy.jsp">Shareholders Communication Policy</a></li><li><a href="http://www.kerrylogistics.com/eng/INVESTOR/corporate/procedure/procedure.jsp">Procedure for Election of Directors</a></li><li><a href="http://www.kerrylogistics.com/eng/INVESTOR/corporate/boarddiversity/boardpolicy.jsp">Board Diversity Policy</a></li><li><a href="http://www.kerrylogistics.com/eng/INVESTOR/corporate/byelaws/bye-laws.jsp">Bye-laws</a></li></ul></div><div class="div4"><ul class="fixed"><li><a href="http://www.kerrylogistics.com/eng/INVESTOR/analyst/analyst.jsp"><strong>Analyst Coverage</strong></a></li></ul><ul class="fixed"><li><a href="http://www.kerrylogistics.com/eng/INVESTOR/Contact/contact.jsp"><strong>Contact</strong></a></li></ul><ul class="fixed"><li><a href="http://www.kerrylogistics.com/eng/INVESTOR/disclaimer/disclaimer.jsp"><strong>Disclaimer</strong></a></li></ul></div></dd></dl></div><script type="text/javascript">function submittop(){var sa = document.getElementById("searchbar").value;var pathname =  window.location.pathname;if(pathname.indexOf("eng")>0){window.location.href="/eng/main/search.jsp?key="+sa;}else if(pathname.indexOf("tch")>0){window.location.href="/tch/main/search.jsp?key="+sa;}else{window.location.href="/sch/main/search.jsp?key="+sa;}}</script><div class="searchbar fr"><input name="searchbar" type="text" id="searchbar" class="ggsearch ggsearch1"><input name="" onclick="submittop();" type="button" id="btn_search"></div><div class="clear"></div><a href="http://www.kerrylogistics.com/eng/main/kerriervision.jsp" class="kerrierlogin btn_menuvision" title=""></a></div></div>
+    <div id="insidemain" class="fixed">
+    	<div class="sidebar">
+        	<div class="sidemenu">
+                <a id="flip_1" class="flip" href="http://www.kerrylogistics.com/eng/main/contacts.jsp" style="color:#000; font-weight:bold;">Contacts</a>
+            </div>
+        </div>
+        <div class="insideright">
+        	<div class="insideban"><img src="./Kerry Logistics_files/ban_contact.jpg"></div>
+            <span class="BreadcrumbNav">You are here: <a href="http://www.kerrylogistics.com/eng/main/index.jsp" title="">HOME</a> &gt; Contacts</span>
+            <h1 class="contenttitle">Contacts</h1>
+            <div class="contactus">
+                <dl class="contactusdl">
+                	<dt class="fixed">
+                    	<p>
+                        	<strong>Global Head Office</strong><br>
+                            <span>
+                            	16/F Kerry Cargo Centre<br>
+                                55 Wing Kei Road<br>
+                                Kwai Chung<br>
+                                Hong Kong<br>
+                                T  <span class="skype_c2c_print_container notranslate">+852 2410 3600</span><span id="skype_c2c_container" class="skype_c2c_container notranslate" dir="ltr" tabindex="-1" onmouseover="SkypeClick2Call.MenuInjectionHandler.showMenu(this, event)" onmouseout="SkypeClick2Call.MenuInjectionHandler.hideMenu(this, event)" onclick="SkypeClick2Call.MenuInjectionHandler.makeCall(this, event)" data-numbertocall="+85224103600" data-numbertype="paid" data-isfreecall="false" data-isrtl="false" data-ismobile="false"><span class="skype_c2c_highlighting_inactive_common" dir="ltr" skypeaction="skype_dropdown"><span class="skype_c2c_textarea_span" id="non_free_num_ui"><img width="0" height="0" class="skype_c2c_logo_img" src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/call_skype_logo.png"><span class="skype_c2c_text_span">+852 2410 3600</span><span class="skype_c2c_free_text_span"></span></span></span></span><br>
+                                F  +852 2480 5958<br>
+                               <!-- E  <a href="mailto:HO@kerrylogistics.com" target="_blank">HO@kerrylogistics.com</a>-->
+                            </span>
+                        </p>
+                        <p>
+                        	<strong>Global Directory</strong><br>
+                            <span>
+                            	Find a local Kerry Logistics office worldwide using our <a href="http://www.kerrylogistics.com/eng/OUR_NETWORK/index.jsp">Global Directory</a> or browse <a href="http://www.kerrylogistics.com/eng/OUR_COMPANY/Press/publications/countryflyers/countryflyers.jsp">Country Profiles</a> to learn about the extensive capabilities of our global network.
+                            </span>
+                        </p>
+                        <p>
+                        	<strong>Career Opportunities</strong><br>
+                            <span>
+                            	<a href="http://www.kerrylogistics.com/eng/OUR_COMPANY/Careers/careers.jsp">Current Job Openings</a>
+                            </span><br><br>
+                            <strong>Media</strong><br>
+                            <span>E  <a href="mailto:corpcom@kerrylogistics.com" target="_blank">corpcom@kerrylogistics.com</a></span>
+                        </p>
+                    </dt>
+                    <dd class="fixed">
+                    	<p>
+                        	<strong>Global Business Enquiry</strong><br>
+                            <span>
+                            	<a href="javascript:form1show();" class="contactuslink1" style="display: none;">Business Enquiry Form</a>
+                                <a href="javascript:form1hide();" class="contactuslink2" style="display: inline;">Business Enquiry Form</a>
+                            </span>
+                        </p>
+                        
+                    </dd>
+                </dl>
+                <input type="hidden" id="formShow" value="form1">
+                <div class="contactusform1" style="display: block;">
+                	<h1 style="font-weight:normal;padding-bottom:5px;">Business Enquiry Form</h1>
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <FORM> element to your page.             -->
+<!--  ----------------------------------------------------------------------  -->
+
+<form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+
+<input type=hidden name="oid" value="00D280000015WK7">
+<input type=hidden name="retURL" value="http://www.kerrylogistics.com/eng/main/index.jsp">
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+<!--  these lines if you wish to test in debug mode.                          -->
+<!--  <input type="hidden" name="debug" value=1>                              -->
+<!--  <input type="hidden" name="debugEmail"                                  -->
+<!--  value="daniel.lau@laputatech.com">                                      -->
+<!--  ----------------------------------------------------------------------  -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="contactformtable">
+                      <tbody><tr>
+                        <td width="180">Full Name*</td>
+                        <td width="50">&nbsp;</td>
+                        <td>
+                        	<div>
+                            <select id="salutation" name="salutation" style="width: 140px; color: rgb(100, 101, 102);">
+                                    <option value="1" selected="">Title</option>
+									<option value="Mr.">Mr.</option>
+                                    <option value="Ms.">Ms.</option>
+									<option value="Mrs.">Mrs.</option>
+									<option value="Dr.">Dr.</option>
+									<option value="Prof.">Prof.</option>
+                            </select>
+                            
+                        	<input style="width: 140px; color: rgb(100, 101, 102);" name="last_name" id="last_name" type="text" class="contactforminput" value="Surname" onfocus="if (value =='Surname'){value ='';this.style.color='#646566'}" onblur="if (value ==''){this.value='Surname';this.style.color='#646566'}">
+                            <input style="width:161px;" name="first_name" id="first_name" type="text" class="contactforminput" value="First Name" onfocus="if (value =='First Name'){this.value='';this.style.color='#646566'}" onblur="if (value ==''){this.value='First Name';this.style.color='#646566'}" on=""></div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Company*</td>
+                        <td>&nbsp;</td>
+                        <td><input name="company" id="company" type="text" class="contactforminput"></td>
+                      </tr>
+                      <tr>
+                        <td>Position*</td>
+                        <td>&nbsp;</td>
+                        <td><input name="title" id="title" type="text" class="contactforminput"></td>
+                      </tr>
+                      <tr>
+                        <td>Country*</td>
+                        <td>&nbsp;</td>
+                        <td>
+                        	<input name="company" id="country" type="text" class="contactforminput">
+                                
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Phone No.*</td>
+                        <td align="right">
+              
+                        </td>
+                        <td>
+                        
+                            <input name="phone" id="phone"  type="text" class="contactforminput" >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Email*</td>
+                        <td>&nbsp;</td>
+                        <td><input name="email" id="email" type="text" class="contactforminput"></td>
+                      </tr>
+                      <tr>
+                        <td valign="top">Your Industry Sector</td>
+                        <td>&nbsp;</td>
+                        <td>
+                        	<div class="contactselect">
+                                <select id="industry" name="industry" style=" color: rgb(100, 101, 102);">
+                                       <option value="">--None--</option>
+									    <option value="Agriculture">Agriculture</option>
+										<option value="Apparel">Apparel</option>
+										<option value="Banking">Banking</option>
+										<option value="Biotechnology">Biotechnology</option>
+										<option value="Chemicals">Chemicals</option>
+										<option value="Communications">Communications</option>
+										<option value="Construction">Construction</option>
+										<option value="Consulting">Consulting</option>
+										<option value="Education">Education</option>
+										<option value="Electronics">Electronics</option>
+										<option value="Energy">Energy</option>
+										<option value="Engineering">Engineering</option>
+										<option value="Entertainment">Entertainment</option>
+										<option value="Environmental">Environmental</option>
+										<option value="Finance">Finance</option>
+										<option value="Food &amp; Beverage">Food &amp; Beverage</option>
+										<option value="Government">Government</option>
+										<option value="Healthcare">Healthcare</option>
+										<option value="Hospitality">Hospitality</option>
+										<option value="Insurance">Insurance</option>
+										<option value="Machinery">Machinery</option>
+										<option value="Manufacturing">Manufacturing</option>
+										<option value="Media">Media</option>
+										<option value="Not For Profit">Not For Profit</option>
+										<option value="Other">Other</option>
+										<option value="Recreation">Recreation</option>
+										<option value="Retail">Retail</option>
+										<option value="Shipping">Shipping</option>
+										<option value="Technology">Technology</option>
+										<option value="Telecommunications">Telecommunications</option>
+										<option value="Transportation">Transportation</option>
+										<option value="Utilities">Utilities</option>
+										
+                                </select>
+								
+                            </div>
+                            <div class="clear"></div>
+                            
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top">Interested Services</td>
+                        <td>&nbsp;</td>
+                        <td>
+										<select  style=" color: rgb(100, 101, 102);" id="00N2800000AjhnM" name="00N2800000AjhnM" title="Interested Services"><option value="">--None--</option><option value="Integrated Logistics">Integrated Logistics</option>
+			<option value="International Freight Forwarding">International Freight Forwarding</option>
+			<option value="Supply Chain Solution">Supply Chain Solution</option>
+			<option value="Others">Others</option>
+			</select><br>
+										
+                            
+                            
+                            
+                        </td>
+                      </tr>
+                     
+                      <tr>
+                        <td>Interested Country</td>
+                        <td>&nbsp;</td>
+                        <td>
+                        	<input  class="contactforminput" id="00N2800000Ajhoq" maxlength="255" name="00N2800000Ajhoq" size="20" type="text" />
+                        </td>
+                      </tr>
+                      <input name="lead_source" id="lead_source"  value="Website" type="hidden" class="contactforminput" >
+					  
+					  <input name="recordtype" id="recordtype"  value="01228000000GUnK" type="hidden" class="contactforminput" >
+                      <tr>
+                        <td valign="top">Your Enquiry*</td>
+                        <td>&nbsp;</td>
+                        <td>
+                        	<textarea class="contactforminput" name="description" id="description" cols="" rows=""></textarea>
+                        </td>
+                      </tr>
+                    </tbody></table>
+
+                </div>
+                <div class="clear"></div>
+                
+                	<br>
+                	
+                    <div class="formbottom" style="">
+                    	<p class="fl">All fields marked with an asterisk (*) are mandatory.</p>
+                       
+						<input class="btn_submit" type="submit" name="submit">
+                        <a href="javascript:formcreate();" class="btn_reset">Reset</a>
+                    </div>
+            	</div>
+            <div class="clear"></div>
+        </div>
+    </div>
+<script type="text/javascript">
+
+var formId = '#captchaForm';
+	var link = 'contacts.jsp';
+	function recapValidate(contactForm){
+		$.ajax({
+			cache: false,
+			type: "POST",
+			url: link,
+			data: $(formId).serialize(),
+			success: function(msg){
+				if(msg!=null && (msg.length<3)){
+					//formsubmit();
+					contactForm.submit();
+				}
+				else{
+					alert(msg);
+					//window.location.reload();
+					Recaptcha.reload();
+				}
+			}
+		});
+	};
+</script>
+    
+	<script type="text/javascript" src="./Kerry Logistics_files/dc.js"></script>
+	<script type="text/javascript" src="./Kerry Logistics_files/google_analytics.js"></script>
+	<div id="footer">
+    	<span id="footershare">
+        	<a href="http://www.facebook.com/pages/Kerry-Logistics/346590818754858?fref=ts" title="" target="_Blank" id="btn_facebook">Facebook</a>
+			<a href="http://www.linkedin.com/company/63750?trk=tyah" target="_Blank" title="" id="btn_in">In</a>
+			<a href="https://twitter.com/KerryLogistics" title="" target="_Blank" id="btn_twitter">Twitter</a>
+            <a href="http://www.kerrylogistics.com/eng/main/rssfeeds.jsp" title="" id="btn_rss">RSS</a>
+        </span>
+        <p>© Kerry Logistics Network Limited. All Rights Reserved.</p>
+        <ul class="topnav" style="padding:18px 25px 0 0; line-height:normal;">
+        	<li><a href="http://www.kerrylogistics.com/eng/main/legal/index.jsp" title="">Legal</a></li>
+            <!--<li><a href="/eng/main/news.jsp" title="">NewsFlash</a></li>-->
+            <li><a href="http://www.kerrylogistics.com/eng/main/sitemap.jsp" title="">Sitemap</a></li>
+            <li><a href="http://intranet.kerrylogistics.com/" target="_Blank" title="" class="topnavlasta">Intranet</a></li>
+        </ul>
+    </div>
+<script type="text/javascript"> 
+/* 
+  var _gaq = _gaq || []; 
+  _gaq.push(['_setAccount', 'UA-31492504-1']); 
+  _gaq.push(['_setDomainName', 'kerrylogistics.com']); 
+  _gaq.push(['_trackPageview']); 
+
+  (function() { 
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; 
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; 
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); 
+  })();  */
+</script>
+</div>
+
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><iframe src="./Kerry Logistics_files/saved_resource.html" style="height: 0px; width: 0px; visibility: hidden; border: none; display: none;">This frame prevents back/forward cache problems in Safari.</iframe><div class="skype_c2c_menu_container notranslate" id="skype_c2c_menu_container" onmouseover="SkypeClick2Call.MenuInjectionHandler.showMenu(this, event)" onmouseout="SkypeClick2Call.MenuInjectionHandler.hideMenu(this, event)" data-fp="{260F7727-0A64-470B-BC2F-EB4B4ACD1B4D}" data-murl="https://pipe.skype.com/Client/2.0/" data-p2murl="https://c2c-p2m-secure.skype.com/p2m/v1/push" data-uiid="1" data-uilang="en" style="display: none;"><div class="skype_c2c_menu_click2call"><a class="skype_c2c_menu_click2call_action" id="skype_c2c_menu_click2call_action" target="_self">Call</a></div><div class="skype_c2c_menu_click2sms"><a class="skype_c2c_menu_click2sms_action" id="skype_c2c_menu_click2sms_action" target="_self">Send SMS</a></div><div class="skype_c2c_menu_push_to_mobile"><a class="skype_c2c_menu_push_to_mobile_action" id="skype_c2c_menu_push_to_mobile_action" target="_blank">Call from mobile</a></div><div class="skype_c2c_menu_add2skype"><a class="skype_c2c_menu_add2skype_text" id="skype_c2c_menu_add2skype_text" target="_self">Add to Skype</a></div><div class="skype_c2c_menu_toll_info"><span class="skype_c2c_menu_toll_callcredit">You'll need Skype Credit</span><span class="skype_c2c_menu_toll_free">Free via Skype</span></div></div></body></html>
