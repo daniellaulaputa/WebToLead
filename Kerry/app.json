@@ -1,0 +1,12 @@
+{
+  "name": "Web to lead",
+  "description": "Sample Web To Lead",
+  "repository": "https://github.com/daniellaulaputa/WebToLead",
+  "website": "https://www.salesforce.com/platform/identity",
+  "logo": "http://www.kerrylogistics.com/eng/OUR_COMPANY/Press/imagegallery/logo/images/KL_E%20306W.jpg",  
+  "keywords": ["salesforce"],
+  "success_url": "/",
+  "env": {
+    "BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-php"
+  }
+}
